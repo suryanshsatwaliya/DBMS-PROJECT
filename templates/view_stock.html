@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Blood Stock</h2>
+  <table>
+    <tr><th>Blood Group</th><th>Units</th></tr>
+    {% for s in stock %}
+    <tr>
+      <td><span class="badge">{{ s[0] }}</span></td>
+      <td>{{ s[1] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

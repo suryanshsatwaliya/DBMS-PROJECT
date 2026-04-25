@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Donor List</h2>
+
+  {% if donors %}
+  <table>
+    <tr>
+      <th>S.No.</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Blood Group</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Action</th>
+    </tr>
+
+    {% for d in donors %}
+    <tr>
+      <td>{{ loop.index }}</td>   <!-- Serial Number -->
+      <td>{{ d[1] }}</td>
+      <td>{{ d[2] or '-' }}</td>
+      <td>{{ d[3] or '-' }}</td>
+      <td><span class="badge">{{ d[4] }}</span></td>
+      <td>{{ d[5] or '-' }}</td>
+      <td>{{ d[6] or '-' }}</td>
+      <td>
+        <a class="btn btn-secondary" href="{{ url_for('confirm_delete', id=d[0]) }}">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+  {% else %}
+  <p class="notice">No donors available. Add a donor first.</p>
+  {% endif %}
+</div>
+{% endblock %}

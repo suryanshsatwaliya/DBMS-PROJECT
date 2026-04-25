@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Add Donor</h2>
+  <form method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="number" name="age" placeholder="Age">
+    <select name="gender">
+      <option value="" disabled selected>Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+    <select name="blood_group" required>
+      <option value="" disabled selected>Blood Group</option>
+      <option>A+</option><option>A-</option>
+      <option>B+</option><option>B-</option>
+      <option>O+</option><option>O-</option>
+      <option>AB+</option><option>AB-</option>
+    </select>
+    <input type="text" name="phone" placeholder="Phone">
+    <input type="text" name="city" placeholder="City">
+    <button type="submit">Save Donor</button>
+  </form>
+</div>
+{% endblock %}

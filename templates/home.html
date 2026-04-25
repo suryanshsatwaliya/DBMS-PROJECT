@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.hero {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1 {
+  font-size:48px;
+  font-weight:800;
+  color:#4a0000;
+  margin-bottom:10px;
+  text-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+.hero p {
+  font-size:18px;
+  font-weight:500;
+  color:#650000;
+  margin-bottom:26px;
+  max-width:650px;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:18px;
+}
+
+.hero-buttons a {
+  padding:12px 22px;
+  border-radius:14px;
+  background:#d90429;
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  font-size:16px;
+  box-shadow:0 8px 20px rgba(217,4,41,0.35);
+  transition:0.25s;
+}
+
+.hero-buttons a:hover {
+  background:#b20020;
+  transform:translateY(-3px);
+}
+
+.hero-buttons .secondary {
+  background:#222;
+}
+
+.hero-buttons .secondary:hover {
+  background:#000;
+}
+</style>
+
+
+<div class="hero">
+  <h1>Blood Bank Management System</h1>
+  <p>Save lives by managing blood donors, donations and blood stock efficiently. A clean and powerful system made for simplicity and real use.</p>
+
+  <div class="hero-buttons">
+    <a href="{{ url_for('add_donor') }}">Add Donor</a>
+    <a href="{{ url_for('donors') }}" class="secondary">View Donors</a>
+  </div>
+</div>
+
+{% endblock %}
